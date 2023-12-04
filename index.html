@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.6.0/remixicon.css" integrity="sha512-GL7EM8Lf8kU23I3kTio2kRWt8YRDVIQcSZjRVtVRfk05kB/QvkyafuTC94Ev0X6qk7Z0r5s06c1lsP1p/ezDYw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="Css/styles.css" type="text/css"/>
+</head>
+<body>
+    
+
+    <div class="MenuContainer">
+        <div class="MenuInnerContaienr">
+           <div class="menu" id="menu1"><i class="ri-git-repository-private-line"></i></div>
+           <div class="menu" id="menu2"><i class="ri-shut-down-line"></i></div>
+           <div class="menu" id="menu3"><i class="ri-printer-cloud-line"></i></div>
+           <div class="menu" id="menu4"><i class="ri-government-line"></i></div>
+           <div class="menu" id="menu5"><i class="ri-crosshair-2-line"></i></div>
+           <div class="menu" id="menu6"><i class="ri-contacts-book-upload-line"></i></div>
+           <div class="menu" id="menu7"><i class="ri-file-pdf-2-line"></i></div>
+           <div class="menu" id="menu8"><i class="ri-mail-download-line"></i></div>
+           <div class="menu" id="menu9"><i class="ri-chat-smile-2-line"></i></div>
+        </div>
+    </div>
+
+
+<script>
+    let _mainContainer=document.querySelector('.MenuInnerContaienr');
+    let _firstItem=document.querySelector('#menu1');
+    let _centerItem=document.querySelector('#menu2');
+    let _thirdItem=document.querySelector('#menu3');
+    let _fourthItem=document.querySelector('#menu4');
+    let _fifthItem=document.querySelector('#menu5');
+    let _sixthItem=document.querySelector('#menu6');
+    let _seventhItem=document.querySelector('#menu7');
+    let _eightItem=document.querySelector('#menu8');
+    let _ninethItem=document.querySelector('#menu9');
+    _centerItem.onclick=function(){
+        _mainContainer.classList.toggle('onoff');
+        _firstItem.classList.toggle('move1');
+        _centerItem.classList.toggle('move2');
+        _thirdItem.classList.toggle('move3');
+        _fourthItem.classList.toggle('move4');
+        _fifthItem.classList.toggle('move5');
+        _sixthItem.classList.toggle('move6');
+        _seventhItem.classList.toggle('move7');
+        _eightItem.classList.toggle('move8');
+        _ninethItem.classList.toggle('move9');
+    }
+</script>
+
+</body>
+</html>

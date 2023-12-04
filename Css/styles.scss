@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&display=swap');
+$bg:#1c1d1d;
+$fc:#eee;
+$menuTextColor:#3d3d3d;
+$menuIconColor:#3d3d3d;
+$xPos:-30px,0px,30px;
+$yPos:-30px,30px;
+
+
+@mixin FlexCenter(){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    position: relative;
+    font-size: 10pt;
+    font-family: 'Work Sans', sans-serif;
+    width: 100%;
+    height: 100vh;
+    color: $fc;
+    background-color: $bg;
+    @include FlexCenter();
+
+}
+
+.MenuContainer{
+    position: relative;
+    width: 220px;
+    height: 220px;
+    background-color: $bg;
+    @include FlexCenter();
+    border-radius: 50%;
+    transition: 0.8s box-shadow;
+}
+
+
+
+.MenuInnerContaienr{
+    position: relative;
+    width: 220px;
+    height: 220px;
+    background-color: #000000;
+    @include FlexCenter();
+    border-radius: 50%;
+    transition: 0.5s box-shadow !important;
+}
+
+.onoff{
+   
+    box-shadow: 0 3px 30px rgba($color:rgb(207, 207, 146), $alpha: 0.5) !important;
+    transition:0.6s box-shadow !important;
+}
+
+@mixin menuSize(){
+    position: absolute;
+     width: 15px;
+    height: 15px;
+    background-color: #d8d8d8;
+    border-radius: 50%;
+}
+
+.menu{
+    @include menuSize();
+    @include FlexCenter();
+    transform: translateX(0px);
+    cursor: pointer;
+}
+
+.menu i{
+    color:#3d3d3d;
+    font-size:0.6em;
+}
+
+#menu2{
+    width: 25px;
+    height: 25px;
+    color:yellow;
+    background-color: #1c1d1d;
+}
+#menu2 i{
+    color:rgb(21, 255, 0);
+    font-size:1em;
+
+}
+
+@for $x from 1 through 3{
+    #menu#{$x}{
+        transform: translateX(nth($xPos,$x));
+        transition: 0.5s all;
+    }
+}
+
+@for $m from 1 through 2{
+    #menu#{$m + 3}{
+        transform: translate(0,nth($yPos,$m));
+        transition: 0.5s all;
+    }
+}
+
+@for $m from 1 through 2{
+    #menu#{$m + 5}{
+        transform: translate(30px,nth($yPos,$m));
+        transition: 0.5s all;
+        transition-delay:calc(0.2 + ($m/10)) + s;
+    }
+}
+
+@for $m from 1 through 2{
+    #menu#{$m + 7}{
+        transform: translate(-30px,nth($yPos,$m));
+        transition: 0.5s all;
+        transition-delay:calc(0.4 + ($m/10)) + s;
+    }
+}
+
+.move2 i{
+    color:red !important;
+}
+
+.move3{
+    color:yellow;
+    transform: translate(60px,0) scale(2.2) !important;
+    transition: 0.6s all;
+    transition-delay: 0.7s;
+}
+
+.move4{
+    color:yellow;
+    transform: translate(0,-60px) scale(2.2) !important;
+    transition: 0.4s all;
+    transition-delay: 0.4s;
+}
+
+.move5{
+    color:yellow;
+    transform: translate(0,60px) scale(2.2) !important;
+    transition: 0.6s all;
+    transition-delay: 0.7s;
+}
+
+.move6{
+    color:yellow;
+    transform: translate(60px,-60px) scale(2.2) !important;
+    transition: 0.2s all;
+    transition-delay: 0.3s;
+}
+.move7{
+    color:yellow;
+    transform: translate(60px,60px) scale(2.2) !important;
+    transition: 0.6s all;
+    transition-delay: 0.7s;
+}
+
+.move1{
+    transform: translate(-60px,0) scale(2.2) !important;
+    transition: 0.2s all;
+    transition-delay: 0.3s;
+}
+
+.move8{
+    transform: translate(-60px,-60px) scale(2.2) !important;
+    transition: 0.2s all;
+    transition-delay: 0.3s;
+}
+.move9{
+
+    transform: translate(-60px,60px) scale(2.2) !important;
+    transition: 0.6s all;
+    transition-delay: 0.7s;
+}
+
+@for $b from 1 through 9{
+    .move#{$b}{
+        background: #000000;
+    }
+    }
+
+@for $b from 1 through 9{
+    @if($b != 2){
+
+        .move#{$b} i{
+            color:yellow;
+            }
+    }
+
+}
